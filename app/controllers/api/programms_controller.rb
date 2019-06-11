@@ -1,4 +1,4 @@
-class ProgrammsController < ApplicationController
+class API::ProgrammsController < ApplicationController
   before_action :set_programm, only: [:show, :update, :destroy]
 
   # GET /programms
