@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  season: 
+  number: 
+  show: 
+  length: 2019-06-11 11:34:45
+  description: MyString
+
+two:
+  title: MyString
+  season: 
+  number: 
+  show: 
+  length: 2019-06-11 11:34:45
+  description: MyString

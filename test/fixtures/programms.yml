@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  channel: one
+  episode: one
+  timeslot: 2019-06-11 12:47:07
+  date: 2019-06-11
+
+two:
+  channel: two
+  episode: two
+  timeslot: 2019-06-11 12:47:07
+  date: 2019-06-11
