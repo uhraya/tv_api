@@ -1,10 +1,11 @@
-class API::ProgrammsController < ApplicationController
+class Api::ProgrammsController < ApplicationController
   before_action :set_programm, only: [:show, :update, :destroy]
 
   # GET /programms
   # GET /programms.json
   def index
     @programms = Programm.all
+    render json: @programms
   end
 
   # GET /programms/1
