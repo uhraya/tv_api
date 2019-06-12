@@ -797,3 +797,730 @@ Completed 200 OK in 7ms (Views: 1.8ms | ActiveRecord: 1.1ms)
   [1m[36mShow Load (1.0ms)[0m  [1m[34mselect * from shows s,episodes e where s.id in (1,2) and e.show_id = s.id order by s.id desc[0m
   [1m[36mShow Load (1.2ms)[0m  [1m[34mselect * from shows s,episodes e,programm p, channel c where s.id in (1,2) and e.show_id = s.id and p.episode_id = e.id and p.channel_id = c.id order by s.id desc[0m
   [1m[36mShow Load (1.3ms)[0m  [1m[34mselect * from shows s,episodes e,programms p, channels c where s.id in (1,2) and e.show_id = s.id and p.episode_id = e.id and p.channel_id = c.id order by s.id desc[0m
+Started GET "/" for 127.0.0.1 at 2019-06-12 19:12:47 +0200
+  [1m[35m (179.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/ju/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/ju/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ju/.rvm/gems/ruby-2.5.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ju/.rvm/gems/ruby-2.5.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (8.0ms)
+Completed 200 OK in 59ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/programms/get_programm" for 127.0.0.1 at 2019-06-12 19:12:59 +0200
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for Api::ProgrammsController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/programms.get_programm" for 127.0.0.1 at 2019-06-12 19:13:07 +0200
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for Api::ProgrammsController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/programms.get_programm" for 127.0.0.1 at 2019-06-12 19:13:20 +0200
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for Api::ProgrammsController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/programms" for 127.0.0.1 at 2019-06-12 19:21:56 +0200
+  [1m[35m (135.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/ju/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/ju/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::ProgrammsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `+' for nil:NilClass):
+  
+app/controllers/api/programms_controller.rb:32:in `index'
+Started GET "/api/programms" for 127.0.0.1 at 2019-06-12 19:22:16 +0200
+Processing by Api::ProgrammsController#index as HTML
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/api/programms_controller.rb:34:in `+'
+app/controllers/api/programms_controller.rb:34:in `index'
+Started GET "/api/programms" for 127.0.0.1 at 2019-06-12 19:22:58 +0200
+Processing by Api::ProgrammsController#index as HTML
+  [1m[36mProgramm Load (34.6ms)[0m  [1m[34mSELECT `programms`.* FROM `programms`[0m
+  ↳ app/controllers/api/programms_controller.rb:39
+Completed 200 OK in 61ms (Views: 1.7ms | ActiveRecord: 57.4ms)
+
+
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:23:22 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"channel"=>"ZDF"}
+  [1m[36mChannel Load (46.1ms)[0m  [1m[34mSELECT `channels`.* FROM `channels` WHERE (name = 'ZDF')[0m
+  ↳ app/controllers/api/programms_controller.rb:16
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 61.9ms)
+
+
+  
+NoMethodError (undefined method `id' for "Z":String):
+  
+app/controllers/api/programms_controller.rb:17:in `index'
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:24:00 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"channel"=>"ZDF"}
+  [1m[36mChannel Load (0.3ms)[0m  [1m[34mSELECT `channels`.* FROM `channels` WHERE (name = 'ZDF')[0m
+  ↳ app/controllers/api/programms_controller.rb:16
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/api/programms_controller.rb:17:in `index'
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:24:22 +0200
+  
+SyntaxError (/home/ju/git/tv_api/app/controllers/api/programms_controller.rb:17: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+... = " + channel_find[0].id resuc nil
+...                          ^~~~~):
+  
+app/controllers/api/programms_controller.rb:17: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:24:34 +0200
+  
+SyntaxError (/home/ju/git/tv_api/app/controllers/api/programms_controller.rb:17: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+...= " + channel_find[0].id resuce nil
+...                         ^~~~~~):
+  
+app/controllers/api/programms_controller.rb:17: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:25:02 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"channel"=>"ZDF"}
+  [1m[36mChannel Load (0.3ms)[0m  [1m[34mSELECT `channels`.* FROM `channels` WHERE (name = 'ZDF')[0m
+  ↳ app/controllers/api/programms_controller.rb:16
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/api/programms_controller.rb:17:in `index'
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:25:43 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"channel"=>"ZDF"}
+  [1m[36mChannel Load (0.3ms)[0m  [1m[34mSELECT `channels`.* FROM `channels` WHERE (name = 'ZDF')[0m
+  ↳ app/controllers/api/programms_controller.rb:16
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/api/programms_controller.rb:17:in `index'
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:26:24 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"channel"=>"ZDF"}
+  [1m[36mChannel Load (0.3ms)[0m  [1m[34mSELECT `channels`.* FROM `channels` WHERE (name = 'ZDF')[0m
+  ↳ app/controllers/api/programms_controller.rb:16
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/api/programms_controller.rb:18:in `index'
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:26:39 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"channel"=>"ZDF"}
+  [1m[36mChannel Load (0.4ms)[0m  [1m[34mSELECT `channels`.* FROM `channels` WHERE (name = 'ZDF')[0m
+  ↳ app/controllers/api/programms_controller.rb:16
+Completed 500 Internal Server Error in 53164ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:27:32 +0200
+app/controllers/api/programms_controller.rb:19:in `index'
+  [1m[35m (20.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/ju/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"channel"=>"ZDF"}
+  [1m[36mChannel Load (5.4ms)[0m  [1m[34mSELECT `channels`.* FROM `channels` WHERE (name = 'ZDF')[0m
+  ↳ app/controllers/api/programms_controller.rb:16
+Completed 500 Internal Server Error in 2240ms (ActiveRecord: 5.4ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/api/programms_controller.rb:19:in `index'
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:27:39 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"channel"=>"ZDF"}
+  [1m[36mChannel Load (0.4ms)[0m  [1m[34mSELECT `channels`.* FROM `channels` WHERE (name = 'ZDF')[0m
+  ↳ app/controllers/api/programms_controller.rb:16
+  [1m[36mProgramm Load (0.4ms)[0m  [1m[34mSELECT `programms`.* FROM `programms`[0m
+  ↳ app/controllers/api/programms_controller.rb:41
+Completed 200 OK in 10ms (Views: 1.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:27:41 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"channel"=>"ZDF"}
+  [1m[36mChannel Load (0.4ms)[0m  [1m[34mSELECT `channels`.* FROM `channels` WHERE (name = 'ZDF')[0m
+  ↳ app/controllers/api/programms_controller.rb:16
+  [1m[36mProgramm Load (0.3ms)[0m  [1m[34mSELECT `programms`.* FROM `programms`[0m
+  ↳ app/controllers/api/programms_controller.rb:41
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.7ms)
+
+
+  [1m[35m (17.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChannel Create (34.5ms)[0m  [1m[32mINSERT INTO `channels` (`name`, `created_at`, `updated_at`) VALUES ('ZDF', '2019-06-12 17:30:19', '2019-06-12 17:30:19')[0m
+  [1m[35m (79.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChannel Load (0.5ms)[0m  [1m[34mSELECT  `channels`.* FROM `channels` WHERE `channels`.`id` = 1 LIMIT 1[0m
+  [1m[36mEpisode Load (0.3ms)[0m  [1m[34mSELECT  `episodes`.* FROM `episodes` WHERE `episodes`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:30:51 +0200
+  [1m[35m (12.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/ju/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/ju/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"channel"=>"ZDF"}
+  [1m[36mChannel Load (0.4ms)[0m  [1m[34mSELECT `channels`.* FROM `channels` WHERE (name = 'ZDF')[0m
+  ↳ app/controllers/api/programms_controller.rb:16
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 11.1ms)
+
+
+  
+TypeError (no implicit conversion of Integer into String):
+  
+app/controllers/api/programms_controller.rb:18:in `+'
+app/controllers/api/programms_controller.rb:18:in `index'
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:31:11 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"channel"=>"ZDF"}
+  [1m[36mChannel Load (0.3ms)[0m  [1m[34mSELECT `channels`.* FROM `channels` WHERE (name = 'ZDF')[0m
+  ↳ app/controllers/api/programms_controller.rb:16
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.5ms)
+
+
+  
+NoMethodError (undefined method `+' for nil:NilClass):
+  
+app/controllers/api/programms_controller.rb:33:in `index'
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:31:31 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"channel"=>"ZDF"}
+  [1m[36mChannel Load (0.3ms)[0m  [1m[34mSELECT `channels`.* FROM `channels` WHERE (name = 'ZDF')[0m
+  ↳ app/controllers/api/programms_controller.rb:16
+  [1m[36mProgramm Load (7.2ms)[0m  [1m[34mselect * from programms where channel_id = 1 and order by date asc, timeslot asc[0m
+  ↳ app/controllers/api/programms_controller.rb:37
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 34.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order by date asc, timeslot asc' at line 1: select * from programms where channel_id = 1 and order by date asc, timeslot asc):
+  
+app/controllers/api/programms_controller.rb:37:in `index'
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:32:16 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"channel"=>"ZDF"}
+  [1m[36mChannel Load (0.4ms)[0m  [1m[34mSELECT `channels`.* FROM `channels` WHERE (name = 'ZDF')[0m
+  ↳ app/controllers/api/programms_controller.rb:16
+  [1m[36mProgramm Load (0.5ms)[0m  [1m[34mselect * from programms where channel_id = 1 and order by date asc, timeslot asc[0m
+  ↳ app/controllers/api/programms_controller.rb:38
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 2.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order by date asc, timeslot asc' at line 1: select * from programms where channel_id = 1 and order by date asc, timeslot asc):
+  
+app/controllers/api/programms_controller.rb:38:in `index'
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:32:36 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"channel"=>"ZDF"}
+  [1m[36mChannel Load (0.4ms)[0m  [1m[34mSELECT `channels`.* FROM `channels` WHERE (name = 'ZDF')[0m
+  ↳ app/controllers/api/programms_controller.rb:16
+  [1m[36mProgramm Load (0.4ms)[0m  [1m[34mselect * from programms where channel_id = 1order by date asc, timeslot asc[0m
+  ↳ app/controllers/api/programms_controller.rb:38
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.7ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'by date asc, timeslot asc' at line 1: select * from programms where channel_id = 1order by date asc, timeslot asc):
+  
+app/controllers/api/programms_controller.rb:38:in `index'
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:32:47 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"channel"=>"ZDF"}
+  [1m[36mChannel Load (0.3ms)[0m  [1m[34mSELECT `channels`.* FROM `channels` WHERE (name = 'ZDF')[0m
+  ↳ app/controllers/api/programms_controller.rb:16
+  [1m[36mProgramm Load (45.1ms)[0m  [1m[34mselect * from programms where channel_id = 1 order by date asc, timeslot asc[0m
+  ↳ app/controllers/api/programms_controller.rb:38
+Completed 200 OK in 57ms (Views: 0.2ms | ActiveRecord: 46.7ms)
+
+
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:32:50 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"channel"=>"ZDF"}
+  [1m[36mChannel Load (0.3ms)[0m  [1m[34mSELECT `channels`.* FROM `channels` WHERE (name = 'ZDF')[0m
+  ↳ app/controllers/api/programms_controller.rb:16
+  [1m[36mProgramm Load (0.4ms)[0m  [1m[34mselect * from programms where channel_id = 1 order by date asc, timeslot asc[0m
+  ↳ app/controllers/api/programms_controller.rb:38
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:32:52 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"channel"=>"ZDF"}
+  [1m[36mChannel Load (0.3ms)[0m  [1m[34mSELECT `channels`.* FROM `channels` WHERE (name = 'ZDF')[0m
+  ↳ app/controllers/api/programms_controller.rb:16
+  [1m[36mProgramm Load (0.4ms)[0m  [1m[34mselect * from programms where channel_id = 1 order by date asc, timeslot asc[0m
+  ↳ app/controllers/api/programms_controller.rb:38
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:33:18 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"channel"=>"ZDF"}
+  [1m[36mChannel Load (0.4ms)[0m  [1m[34mSELECT `channels`.* FROM `channels` WHERE (name = 'ZDF')[0m
+  ↳ app/controllers/api/programms_controller.rb:16
+  [1m[36mProgramm Load (0.5ms)[0m  [1m[34mselect * from programms where channel_id = 1 order by date asc, timeslot asc[0m
+  ↳ app/controllers/api/programms_controller.rb:38
+Completed 200 OK in 52892ms (Views: 0.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:34:14 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"channel"=>"ZDF"}
+  [1m[36mChannel Load (0.4ms)[0m  [1m[34mSELECT `channels`.* FROM `channels` WHERE (name = 'ZDF')[0m
+  ↳ app/controllers/api/programms_controller.rb:16
+  [1m[36mProgramm Load (0.4ms)[0m  [1m[34mselect * from programms where channel_id = 1 order by date asc, timeslot asc[0m
+  ↳ app/controllers/api/programms_controller.rb:38
+Completed 200 OK in 63504ms (Views: 0.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:35:22 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"channel"=>"ZDF"}
+  [1m[36mChannel Load (0.4ms)[0m  [1m[34mSELECT `channels`.* FROM `channels` WHERE (name = 'ZDF')[0m
+  ↳ app/controllers/api/programms_controller.rb:16
+  [1m[36mProgramm Load (0.5ms)[0m  [1m[34mselect * from programms where channel_id = 1 order by date asc, timeslot asc[0m
+  ↳ app/controllers/api/programms_controller.rb:38
+Completed 200 OK in 53467ms (Views: 0.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:36:21 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"channel"=>"ZDF"}
+  [1m[36mChannel Load (0.4ms)[0m  [1m[34mSELECT `channels`.* FROM `channels` WHERE (name = 'ZDF')[0m
+  ↳ app/controllers/api/programms_controller.rb:16
+  [1m[36mProgramm Load (0.6ms)[0m  [1m[34mselect * from programms where channel_id = 1 order by date asc, timeslot asc[0m
+  ↳ (byebug):1
+  [1m[36mCACHE Programm Load (0.1ms)[0m  [1m[34mselect * from programms where channel_id = 1 order by date asc, timeslot asc[0m
+  ↳ app/controllers/api/programms_controller.rb:38
+Completed 200 OK in 26193ms (Views: 0.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:38:18 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"channel"=>"ZDF"}
+  [1m[36mChannel Load (0.3ms)[0m  [1m[34mSELECT `channels`.* FROM `channels` WHERE (name = 'ZDF')[0m
+  ↳ app/controllers/api/programms_controller.rb:16
+  [1m[36mProgramm Load (0.4ms)[0m  [1m[34mselect * from programms where channel_id = 1 order by date asc, timeslot asc[0m
+  ↳ app/controllers/api/programms_controller.rb:37
+Completed 200 OK in 17ms (Views: 0.1ms | ActiveRecord: 2.3ms)
+
+
+  [1m[35m (16.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mShowType Load (0.4ms)[0m  [1m[34mSELECT  `show_types`.* FROM `show_types` LIMIT 11[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShowType Create (41.2ms)[0m  [1m[32mINSERT INTO `show_types` (`name`, `created_at`, `updated_at`) VALUES ('News', '2019-06-12 17:39:08', '2019-06-12 17:39:08')[0m
+  [1m[35m (29.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShowType Create (0.4ms)[0m  [1m[32mINSERT INTO `show_types` (`name`, `created_at`, `updated_at`) VALUES ('Documentary', '2019-06-12 17:39:08', '2019-06-12 17:39:08')[0m
+  [1m[35m (97.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShowType Create (17.1ms)[0m  [1m[32mINSERT INTO `show_types` (`name`, `created_at`, `updated_at`) VALUES ('Gameshow', '2019-06-12 17:39:08', '2019-06-12 17:39:08')[0m
+  [1m[35m (114.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShowType Create (0.2ms)[0m  [1m[32mINSERT INTO `show_types` (`name`, `created_at`, `updated_at`) VALUES ('Series', '2019-06-12 17:39:09', '2019-06-12 17:39:09')[0m
+  [1m[35m (107.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mShowType Load (0.5ms)[0m  [1m[34mSELECT  `show_types`.* FROM `show_types` LIMIT 11[0m
+  [1m[36mShowType Load (0.5ms)[0m  [1m[34mSELECT  `show_types`.* FROM `show_types` ORDER BY `show_types`.`id` ASC LIMIT 1 OFFSET 3[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mShowType Load (0.4ms)[0m  [1m[34mSELECT `show_types`.* FROM `show_types`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mShowType Load (0.5ms)[0m  [1m[34mSELECT `show_types`.* FROM `show_types`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShowType Load (0.5ms)[0m  [1m[34mSELECT  `show_types`.* FROM `show_types` WHERE `show_types`.`id` = 1 LIMIT 1[0m
+  [1m[36mShow Create (31.2ms)[0m  [1m[32mINSERT INTO `shows` (`title`, `show_type_id`, `description`, `created_at`, `updated_at`) VALUES ('Tagesschau', 1, 'Brings the news of the day', '2019-06-12 17:41:10', '2019-06-12 17:41:10')[0m
+  [1m[35m (48.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShowType Load (0.5ms)[0m  [1m[34mSELECT  `show_types`.* FROM `show_types` WHERE `show_types`.`id` = 2 LIMIT 1[0m
+  [1m[36mShow Create (0.7ms)[0m  [1m[32mINSERT INTO `shows` (`title`, `show_type_id`, `description`, `created_at`, `updated_at`) VALUES ('Nature is scary', 2, 'A Nature Documentary, about how nature is a very scary place', '2019-06-12 17:41:10', '2019-06-12 17:41:10')[0m
+  [1m[35m (120.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShowType Load (0.4ms)[0m  [1m[34mSELECT  `show_types`.* FROM `show_types` WHERE `show_types`.`id` = 3 LIMIT 1[0m
+  [1m[36mShow Create (48.2ms)[0m  [1m[32mINSERT INTO `shows` (`title`, `show_type_id`, `description`, `created_at`, `updated_at`) VALUES ('The price is Right', 3, 'Guess the Price and win big!', '2019-06-12 17:41:10', '2019-06-12 17:41:10')[0m
+  [1m[35m (49.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShowType Load (0.5ms)[0m  [1m[34mSELECT  `show_types`.* FROM `show_types` WHERE `show_types`.`id` = 4 LIMIT 1[0m
+  [1m[36mShow Create (0.4ms)[0m  [1m[32mINSERT INTO `shows` (`title`, `show_type_id`, `description`, `created_at`, `updated_at`) VALUES ('Game of Thrones', 4, 'Travel to the fictional continent of Westeros, where powerful families are at war for the Iron Throne', '2019-06-12 17:41:10', '2019-06-12 17:41:10')[0m
+  [1m[35m (45.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT  `shows`.* FROM `shows` WHERE `shows`.`id` = 1 LIMIT 1[0m
+  [1m[36mEpisode Create (7.6ms)[0m  [1m[32mINSERT INTO `episodes` (`title`, `season`, `number`, `show_id`, `length`, `description`, `created_at`, `updated_at`) VALUES ('Tagesschau 10.6.2019', 40, 161, 1, '00:20:00', 'News of the day', '2019-06-12 17:41:18', '2019-06-12 17:41:18')[0m
+  [1m[35m (46.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT  `shows`.* FROM `shows` WHERE `shows`.`id` = 1 LIMIT 1[0m
+  [1m[36mEpisode Create (0.4ms)[0m  [1m[32mINSERT INTO `episodes` (`title`, `season`, `number`, `show_id`, `length`, `description`, `created_at`, `updated_at`) VALUES ('Tagesschau 11.6.2019', 40, 162, 1, '00:20:00', 'News of the day', '2019-06-12 17:41:18', '2019-06-12 17:41:18')[0m
+  [1m[35m (50.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT  `shows`.* FROM `shows` WHERE `shows`.`id` = 1 LIMIT 1[0m
+  [1m[36mEpisode Create (0.3ms)[0m  [1m[32mINSERT INTO `episodes` (`title`, `season`, `number`, `show_id`, `length`, `description`, `created_at`, `updated_at`) VALUES ('Tagesschau 12.6.2019', 40, 163, 1, '00:20:00', 'News of the day', '2019-06-12 17:41:18', '2019-06-12 17:41:18')[0m
+  [1m[35m (47.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChannel Create (0.4ms)[0m  [1m[32mINSERT INTO `channels` (`name`, `created_at`, `updated_at`) VALUES ('ZDF', '2019-06-12 17:41:25', '2019-06-12 17:41:25')[0m
+  [1m[35m (57.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChannel Load (9.7ms)[0m  [1m[34mSELECT  `channels`.* FROM `channels` WHERE `channels`.`id` = 1 LIMIT 1[0m
+  [1m[36mEpisode Load (0.3ms)[0m  [1m[34mSELECT  `episodes`.* FROM `episodes` WHERE `episodes`.`id` = 1 LIMIT 1[0m
+  [1m[36mProgramm Create (0.7ms)[0m  [1m[32mINSERT INTO `programms` (`channel_id`, `episode_id`, `timeslot`, `date`, `created_at`, `updated_at`) VALUES (1, 1, '20:00:00', '2019-06-10', '2019-06-12 17:41:33', '2019-06-12 17:41:33')[0m
+  [1m[35m (59.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/programms?channel=ZDF" for 127.0.0.1 at 2019-06-12 19:42:27 +0200
+  [1m[35m (30.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/ju/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/ju/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"channel"=>"ZDF"}
+  [1m[36mChannel Load (0.4ms)[0m  [1m[34mSELECT `channels`.* FROM `channels` WHERE (name = 'ZDF')[0m
+  ↳ app/controllers/api/programms_controller.rb:16
+  [1m[36mProgramm Load (0.6ms)[0m  [1m[34mselect * from programms where channel_id = 1 order by date asc, timeslot asc[0m
+  ↳ app/controllers/api/programms_controller.rb:37
+Completed 200 OK in 25ms (Views: 0.7ms | ActiveRecord: 3.1ms)
+
+
+  [1m[35m (42.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChannel Load (0.3ms)[0m  [1m[34mSELECT  `channels`.* FROM `channels` WHERE `channels`.`id` = 1 LIMIT 1[0m
+  [1m[36mEpisode Load (0.2ms)[0m  [1m[34mSELECT  `episodes`.* FROM `episodes` WHERE `episodes`.`id` = 2 LIMIT 1[0m
+  [1m[36mProgramm Create (18.9ms)[0m  [1m[32mINSERT INTO `programms` (`channel_id`, `episode_id`, `timeslot`, `date`, `created_at`, `updated_at`) VALUES (1, 2, '20:00:00', '2019-06-11', '2019-06-12 17:43:57', '2019-06-12 17:43:57')[0m
+  [1m[35m (88.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mChannel Load (0.4ms)[0m  [1m[34mSELECT  `channels`.* FROM `channels` WHERE `channels`.`id` = 1 LIMIT 1[0m
+  [1m[36mEpisode Load (0.4ms)[0m  [1m[34mSELECT  `episodes`.* FROM `episodes` WHERE `episodes`.`id` = 3 LIMIT 1[0m
+  [1m[36mProgramm Create (36.5ms)[0m  [1m[32mINSERT INTO `programms` (`channel_id`, `episode_id`, `timeslot`, `date`, `created_at`, `updated_at`) VALUES (1, 3, '20:00:00', '2019-06-13', '2019-06-12 17:43:58', '2019-06-12 17:43:58')[0m
+  [1m[35m (40.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/programms?showtype=News" for 127.0.0.1 at 2019-06-12 19:44:39 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"showtype"=>"News"}
+  [1m[36mShowType Load (0.6ms)[0m  [1m[34mSELECT `show_types`.* FROM `show_types` WHERE (name = 'News')[0m
+  ↳ app/controllers/api/programms_controller.rb:23
+  [1m[36mShow Load (0.9ms)[0m  [1m[34mSELECT `shows`.* FROM `shows` WHERE (show_type_id =)[0m
+  ↳ app/controllers/api/programms_controller.rb:24
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 2.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1: SELECT `shows`.* FROM `shows` WHERE (show_type_id =)):
+  
+app/controllers/api/programms_controller.rb:24:in `index'
+Started GET "/api/programms?showtype=News" for 127.0.0.1 at 2019-06-12 19:46:07 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"showtype"=>"News"}
+  [1m[36mShowType Load (0.3ms)[0m  [1m[34mSELECT `show_types`.* FROM `show_types` WHERE (name = 'News')[0m
+  ↳ app/controllers/api/programms_controller.rb:23
+  [1m[36mShowType Load (0.6ms)[0m  [1m[34mSELECT  `show_types`.* FROM `show_types` WHERE (name = 'News') LIMIT 11[0m
+  ↳ app/controllers/api/programms_controller.rb:25
+  [1m[36mCACHE ShowType Load (0.0ms)[0m  [1m[34mSELECT `show_types`.* FROM `show_types` WHERE (name = 'News')[0m
+  ↳ (byebug):1
+  [1m[36mCACHE ShowType Load (0.0ms)[0m  [1m[34mSELECT `show_types`.* FROM `show_types` WHERE (name = 'News')[0m
+  ↳ (byebug):1
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT `shows`.* FROM `shows` WHERE (show_type_id =)[0m
+  ↳ (byebug):1
+  [1m[36mShow Load (0.7ms)[0m  [1m[34mSELECT `shows`.* FROM `shows` WHERE (show_type_id =)[0m
+  ↳ (byebug):1
+  [1m[36mCACHE ShowType Load (0.0ms)[0m  [1m[34mSELECT `show_types`.* FROM `show_types` WHERE (name = 'News')[0m
+  ↳ (byebug):1
+  [1m[36mCACHE ShowType Load (0.0ms)[0m  [1m[34mSELECT `show_types`.* FROM `show_types` WHERE (name = 'News')[0m
+  ↳ (byebug):1
+Completed 500 Internal Server Error in 113376ms (ActiveRecord: 3.3ms)
+
+
+  
+NoMethodError (undefined method `id' for 1:Integer
+Did you mean?  i):
+  
+app/controllers/api/programms_controller.rb:25:in `index'
+Started GET "/api/programms?showtype=News" for 127.0.0.1 at 2019-06-12 19:48:05 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"showtype"=>"News"}
+  [1m[36mShowType Load (0.3ms)[0m  [1m[34mSELECT `show_types`.* FROM `show_types` WHERE (name = 'News')[0m
+  ↳ app/controllers/api/programms_controller.rb:23
+Completed 500 Internal Server Error in 31382ms (ActiveRecord: 1.2ms)
+
+
+  
+NoMethodError (undefined method `id' for 1:Integer
+Did you mean?  i):
+  
+app/controllers/api/programms_controller.rb:25:in `index'
+Started GET "/api/programms?showtype=News" for 127.0.0.1 at 2019-06-12 19:48:38 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"showtype"=>"News"}
+  [1m[36mShowType Load (0.4ms)[0m  [1m[34mSELECT `show_types`.* FROM `show_types` WHERE (name = 'News')[0m
+  ↳ app/controllers/api/programms_controller.rb:23
+  [1m[36mShow Load (0.8ms)[0m  [1m[34mSELECT `shows`.* FROM `shows` WHERE (show_type_id = 1)[0m
+  ↳ app/controllers/api/programms_controller.rb:25
+Completed 500 Internal Server Error in 4417ms (ActiveRecord: 11.4ms)
+
+
+  
+NoMethodError (undefined method `get_ids' for #<Array:0x00007f12f00becf8>):
+  
+app/controllers/api/programms_controller.rb:26:in `index'
+Started GET "/api/programms?showtype=News" for 127.0.0.1 at 2019-06-12 19:49:01 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"showtype"=>"News"}
+  [1m[36mShowType Load (0.4ms)[0m  [1m[34mSELECT `show_types`.* FROM `show_types` WHERE (name = 'News')[0m
+  ↳ app/controllers/api/programms_controller.rb:23
+  [1m[36mShow Load (2.5ms)[0m  [1m[34mSELECT `shows`.* FROM `shows` WHERE (show_type_id = 1)[0m
+  ↳ (byebug):1
+  [1m[36mCACHE Show Load (0.0ms)[0m  [1m[34mSELECT `shows`.* FROM `shows` WHERE (show_type_id = 1)[0m
+  ↳ app/controllers/api/programms_controller.rb:25
+Completed 500 Internal Server Error in 51716ms (ActiveRecord: 3.0ms)
+
+
+  
+NoMethodError (undefined method `get_ids' for #<Array:0x00000000051c04f8>):
+  
+app/controllers/api/programms_controller.rb:26:in `index'
+Started GET "/api/programms?showtype=News" for 127.0.0.1 at 2019-06-12 19:49:55 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"showtype"=>"News"}
+  [1m[36mShowType Load (0.3ms)[0m  [1m[34mSELECT `show_types`.* FROM `show_types` WHERE (name = 'News')[0m
+  ↳ app/controllers/api/programms_controller.rb:23
+  [1m[36mShow Load (0.6ms)[0m  [1m[34mSELECT `shows`.* FROM `shows` WHERE (show_type_id = 1)[0m
+  ↳ (byebug):1
+  [1m[36mProgramm Load (0.5ms)[0m  [1m[34mSELECT  `programms`.* FROM `programms` LIMIT 11[0m
+  ↳ app/controllers/api/programms_controller.rb:25
+  [1m[36mCACHE Programm Load (0.0ms)[0m  [1m[34mSELECT  `programms`.* FROM `programms` LIMIT 11[0m
+  ↳ /home/ju/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mProgramm Load (0.5ms)[0m  [1m[34mSELECT `programms`.* FROM `programms`[0m
+  ↳ (byebug):1
+  [1m[36mCACHE Show Load (0.0ms)[0m  [1m[34mSELECT `shows`.* FROM `shows` WHERE (show_type_id = 1)[0m
+  ↳ app/controllers/api/programms_controller.rb:25
+Completed 500 Internal Server Error in 9589363ms (ActiveRecord: 31.5ms)
+
+
+  
+NoMethodError (undefined method `get_ids' for #<Array:0x00007f12f00d1588>):
+  
+app/controllers/api/programms_controller.rb:26:in `index'
+Started GET "/api/programms?showtype=News" for 127.0.0.1 at 2019-06-12 22:30:08 +0200
+  [1m[35m (224.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/ju/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (12.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/ju/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"showtype"=>"News"}
+  [1m[36mShowType Load (68.0ms)[0m  [1m[34mSELECT `show_types`.* FROM `show_types` WHERE (name = 'News')[0m
+  ↳ app/controllers/api/programms_controller.rb:23
+  [1m[36mShow Load (66.0ms)[0m  [1m[34mSELECT `shows`.* FROM `shows` WHERE (show_type_id = 1)[0m
+  ↳ app/controllers/api/programms_controller.rb:25
+Completed 500 Internal Server Error in 3407ms (ActiveRecord: 157.9ms)
+
+
+  
+NoMethodError (undefined method `get_ids' for #<Array:0x0000000004a91f60>):
+  
+app/controllers/api/programms_controller.rb:26:in `index'
+Started GET "/api/programms?showtype=News" for 127.0.0.1 at 2019-06-12 22:30:57 +0200
+  [1m[35m (18.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /home/ju/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /home/ju/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"showtype"=>"News"}
+  [1m[36mShowType Load (1.2ms)[0m  [1m[34mSELECT `show_types`.* FROM `show_types` WHERE (name = 'News')[0m
+  ↳ app/controllers/api/programms_controller.rb:23
+  [1m[36mShow Load (1.0ms)[0m  [1m[34mSELECT `shows`.* FROM `shows` WHERE (show_type_id = 1)[0m
+  ↳ app/controllers/api/programms_controller.rb:24
+  [1m[36mEpisode Load (28.2ms)[0m  [1m[34mselect * from episodes where show_id in (1)[0m
+  ↳ app/controllers/api/programms_controller.rb:26
+  [1m[36mProgramm Load (20.7ms)[0m  [1m[34mselect * from programms where episode_id in (1,2,3)order by date asc, timeslot asc[0m
+  ↳ app/controllers/api/programms_controller.rb:37
+Completed 200 OK in 151ms (Views: 1.5ms | ActiveRecord: 61.9ms)
+
+
+Started GET "/api/programms?date=2019-06-13" for 127.0.0.1 at 2019-06-12 22:31:43 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"date"=>"2019-06-13"}
+  [1m[36mProgramm Load (26.2ms)[0m  [1m[34mselect * from programms where programms.date = 2019-06-13 order by date asc, timeslot asc[0m
+  ↳ app/controllers/api/programms_controller.rb:37
+Completed 200 OK in 28ms (Views: 1.1ms | ActiveRecord: 26.2ms)
+
+
+Started GET "/api/programms?date=20190613" for 127.0.0.1 at 2019-06-12 22:31:56 +0200
+Processing by Api::ProgrammsController#index as HTML
+  Parameters: {"date"=>"20190613"}
+  [1m[36mProgramm Load (0.4ms)[0m  [1m[34mselect * from programms where programms.date = 20190613 order by date asc, timeslot asc[0m
+  ↳ app/controllers/api/programms_controller.rb:37
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
