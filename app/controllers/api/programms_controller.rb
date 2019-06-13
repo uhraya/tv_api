@@ -19,6 +19,7 @@ class Api::ProgrammsController < ApplicationController
         channel_conditions = "channel_id = " + channel_find[0].id.to_s
       end
     end
+    
     #Build Filter Condtions for Showtypes
     if show_type
       showtype_find = ShowType.where("name = ?", show_type).to_ary
@@ -46,9 +47,9 @@ class Api::ProgrammsController < ApplicationController
     
     #Render JSON with results
     render json: @programms
-
-
+    
   end
+  
   #Method to extract a string with ids for filtering Purposes
   def get_ids(array)
     ids = "("
